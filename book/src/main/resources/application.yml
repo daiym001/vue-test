@@ -1,0 +1,39 @@
+#Tomcat配置
+server:
+  port: 8080
+
+
+#数据源配置
+mysql:
+  datasource:
+    type : com.alibaba.druid.pool.DruidDataSource
+    url :  jdbc:mysql://192.168.8.155:3306/book_test
+    username : root
+    password : root
+    password_encrypted : "false"
+    driverClassName : com.mysql.jdbc.Driver
+    maxActive : 30
+    minIdle : 10
+    maxWait: 1000
+    poolPreparedStatements : true
+    maxPoolPreparedStatementPerConnectionSize : 20
+    keepAlive : true
+    minEvictableIdleTimeMillis : 60000
+    validationQuery : "SELECT 'x' FROM DUAL"
+    testWhileIdle : true
+    filters : "stat"
+
+#Redis配置
+redisProperties:
+    CACHE_REDIS_MAX_TOTAL : 20
+    CACHE_REDIS_MAX_IDLE : 5
+    CACHE_REDIS_MAX_WAIT_MILLIS : 1
+    CACHE_REDIS_HOST : 192.168.8.165
+    CACHE_REDIS_PORT : 30991
+    CACHE_REDIS_TIMEOUT : 20000
+    CACHE_REDIS_USE_PASSWORD : N
+    CACHE_REDIS_PASSWORD : admin
+
+userProperties:
+    username: admin
+    password: 6A6F666265
